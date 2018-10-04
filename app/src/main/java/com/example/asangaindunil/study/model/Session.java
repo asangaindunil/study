@@ -7,7 +7,7 @@ public class Session {
     private String to;
     private int Complete;
 
-    public Session(String name, String description, String from, String to, int complete){
+    public Session(String name, String from, String to, int complete, String description){
         this.name = name;
         this.description =description;
         this.from=from;
@@ -28,6 +28,15 @@ public class Session {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
     public String getFrom() {
         return from;
     }
@@ -46,6 +55,10 @@ public class Session {
     public int getComplete() {
         return Complete;
     }
+    public void setTo(int complete) {
+        this.Complete = complete;
+    }
+
 
 
 

@@ -3,8 +3,6 @@ package com.example.asangaindunil.study;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -56,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         description = findViewById(R.id.description);
         from = findViewById(R.id.from);
-        to = findViewById(R.id.to);
+        to = findViewById(R.id.uto);
         complete = findViewById(R.id.work);
         calendar =Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_WEEK);

@@ -17,7 +17,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.asangaindunil.study.Activity.ViewSessionCard;
 import com.example.asangaindunil.study.CardView.Adapter.SessionCardAdapter;
+import com.example.asangaindunil.study.MainActivity;
 import com.example.asangaindunil.study.R;
 import com.example.asangaindunil.study.db.Constructor;
 import com.example.asangaindunil.study.db.SessionDbHelper;
@@ -38,8 +40,8 @@ public class SessionViewFragment extends AppCompatActivity {
     public SessionViewFragment(){}
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.session_fragment);
 
         recyclerView =findViewById(R.id.SessionRecycleView);
@@ -50,9 +52,7 @@ public class SessionViewFragment extends AppCompatActivity {
 
         Cursor cursor = readSessions();
         while(cursor.moveToNext()){
-            SessionList.add(new Session(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getInt(4)));
-
-
+            SessionList.add(new Session(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getInt(4),cursor.getString(5)));
         }
         cursor.close();
         sessionCardAdapter = new SessionCardAdapter(SessionList, this);
@@ -62,8 +62,14 @@ public class SessionViewFragment extends AppCompatActivity {
             @Override
             public void onItemClick(int position) {
                 Session session = SessionList.get(position);
+                Intent intent  = new Intent(SessionViewFragment.this,ViewSessionCard.class);
+                intent.putExtra("LessonName",session.getName());
+                intent.putExtra("Desc",session.getDescription());
+                intent.putExtra("From",session.getFrom());
+                intent.putExtra("To",session.getTo());
+                intent.putExtra("Comp",session.getComplete());
 
-                //  startActivity(intent);
+                startActivity(intent);
             }
         });
     }
@@ -106,9 +112,11 @@ public class SessionViewFragment extends AppCompatActivity {
         String[] projection ={
                 BaseColumns._ID,
                 Constructor.Session.Col_1,
+
                 Constructor.Session.Col_3,
                 Constructor.Session.Col_4,
                 Constructor.Session.Col_5,
+                Constructor.Session.Col_2,
 
 
         };

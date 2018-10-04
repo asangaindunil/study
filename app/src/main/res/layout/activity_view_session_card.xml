@@ -6,10 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
+<FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="40dp" >
+</FrameLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="216dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="84dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -30,14 +43,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/name"
+    <TextView
+        android:id="@+id/vname"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="19dp"
         android:layout_marginEnd="40dp"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,38 +73,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/uto" />
 
-    <EditText
-        android:id="@+id/from"
+    <TextView
+        android:id="@+id/vfrom"
         android:layout_width="114dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="240dp"
-        android:layout_marginStart="19dp"
+        android:layout_marginBottom="248dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
-        android:inputType="time"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3" />
 
-    <EditText
+    <TextView
         android:id="@+id/uto"
         android:layout_width="115dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="248dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="time"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="97dp"
-        android:layout_marginEnd="158dp"
-        android:onClick="addinfo"
-        android:text="ADD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <TextView
         android:id="@+id/textView5"
@@ -104,41 +105,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/work"
+    <TextView
+        android:id="@+id/vwork"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="176dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="Out Of 100"
-        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <EditText
-        android:id="@+id/description"
+    <TextView
+        android:id="@+id/vdescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="132dp"
         android:ems="10"
-        android:inputType="textMultiLine"
-        android:lines="8"
-        android:minLines="6"
-        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="160dp"
-        android:text="View"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
